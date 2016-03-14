@@ -1,0 +1,41 @@
+{
+  "name": "twg-fed-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf .build && mkdir .build",
+    "assets": "cp -r ./src/assets ./.build/assets",
+    "index": "cp src/index.html .build/index.html",
+    "dev": "webpack-dev-server --inline --hot --progress --colors",
+    "prep": "npm run clean && npm run index && npm run assets",
+    "---": "---------------------------------------",
+    "start": "npm run prep && npm run dev",
+    "build": "npm run prep && webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "babel-core": "^6.7.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-runtime": "^6.6.1",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.4.0",
+    "eslint-plugin-react": "^4.2.1",
+    "lodash": "^4.6.1",
+    "postcss-loader": "^0.8.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "rimraf": "^2.5.2",
+    "style-loader": "^0.13.0",
+    "twg-styleguide": "^1.2.0",
+    "uglify-loader": "^1.3.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "whatwg-fetch": "^0.11.0"
+  }
+}
