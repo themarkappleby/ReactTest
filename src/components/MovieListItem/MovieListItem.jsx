@@ -1,15 +1,13 @@
 import React, {Component} from 'react';
-import styles from './movie.css';
+import styles from './movieListItem.css';
 
-export default class Movie extends Component {
+export default class MovieListItem extends Component {
   render() {
     const {id, title, rating, runtime, poster} = this.props.data;
     return (
-      <div className={styles.movie}>
+      <div className={styles.item} onClick={this.props.onClick}>
         <img className={styles.poster} src={poster} />
         <div className={styles.title}>{title}</div>
-        <div className={styles.rating}>{rating}</div>
-        <div className={styles.runtime}>{runtime}</div>
       </div>
     );
   }

@@ -1,0 +1,27 @@
+body {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.combo {
+  display: table;
+  width: 100%;
+}
+
+.combo-first, .combo-last {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.combo-first {
+  width: 0;
+}
+
+.combo-last {
+  width: 100%;
+}

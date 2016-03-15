@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import MovieList from './components/MovieList/MovieList.jsx';
 import MovieForm from './components/MovieForm/MovieForm.jsx';
+import MovieDetails from './components/MovieDetails/MovieDetails.jsx';
 import 'whatwg-fetch';
 const URL = '/assets/movies.json';
-import '!style!css!./styles/entry.css';
+import '!style!css!./styles/index.css';
 
 class App extends Component {
   constructor(props) {
@@ -14,11 +15,15 @@ class App extends Component {
     };
     this.fetchMovies();
     this.handleNewMovie = this.handleNewMovie.bind(this);
+    this.selectMovie = this.selectMovie.bind(this);
   }
 
   fetchMovies() {
     fetch(URL).then(res => res.json()).then(movies => {
-      this.setState({movies});
+      this.setState({
+        movies,
+        selectedMovie: movies[0]
+      });
     });
   }
 
@@ -28,11 +33,23 @@ class App extends Component {
     this.setState({movies: allMovies});
   }
 
+  selectMovie(selectedMovie) {
+    this.setState({selectedMovie});
+    console.log(this.state);
+  }
+
   render() {
     return (
       <div className="app">
-        <MovieList movies={this.state.movies} />
-        <MovieForm newMovie={this.handleNewMovie} />
+        <div className="combo">
+          <div className="combo-first">
+            <MovieList movies={this.state.movies} onSelectMovie={this.selectMovie} />
+          </div>
+          <div className="combo-last">
+            <MovieDetails movie={this.state.selectedMovie}></MovieDetails>
+          </div>
+        </div>
+        {/*<MovieForm newMovie={this.handleNewMovie} />*/}
       </div>
     );
   }

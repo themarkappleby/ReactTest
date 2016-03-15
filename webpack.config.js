@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer');
 const path = require('path');
 
 module.exports = {
-  entry: './src/entry.jsx',
+  entry: './src/index.jsx',
   output: {
     path: __dirname + '/.build',
     filename: 'bundle.js',

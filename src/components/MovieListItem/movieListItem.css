@@ -1,0 +1,27 @@
+.item {
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.item:hover {
+  background: #eee;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.poster, .title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.poster {
+  max-width: 45px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 14px;
+}
