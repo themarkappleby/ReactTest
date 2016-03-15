@@ -16,11 +16,7 @@ export default class MovieList extends Component {
     return (
       <div className={styles.list}>
         {this.props.movies.map((movie, index) => {
-          return <MovieListItem
-            onClick={()=>this.selectMovie(movie)}
-            data={movie}
-            key={index}
-          />;
+          return <MovieListItem movie={movie} key={index} />;
         })}
       </div>
     );

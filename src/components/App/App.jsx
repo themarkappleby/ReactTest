@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {selectMovie} from '../../redux/actions';
 
 // components
 import MovieList from '../MovieList/MovieList.jsx';
@@ -16,14 +15,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onSelectMovie: (movie) => {
-      dispatch(selectMovie(movie));
-    }
-  };
-};
-
 class App extends Component {
   render() {
     return (
@@ -31,16 +22,11 @@ class App extends Component {
         <div className="combo">
 
           <div className="combo-first">
-            <MovieList 
-              movies={this.props.movies}
-              onSelectMovie={this.props.onSelectMovie}
-            />
+            <MovieList movies={this.props.movies} />
           </div>
 
           <div className="combo-last">
-            <MovieDetails
-              movie={this.props.selectedMovie}
-            />
+            <MovieDetails movie={this.props.selectedMovie} />
           </div>
         </div>
       </div>
@@ -48,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
