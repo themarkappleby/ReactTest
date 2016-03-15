@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {fetchMovies} from '../../redux/actions';
+import store from '../../redux/store';
 
 // components
 import MovieList from '../MovieList/MovieList.jsx';
@@ -16,6 +18,9 @@ const mapStateToProps = state => {
 };
 
 class App extends Component {
+  componentDidMount() {
+    store.dispatch(fetchMovies());
+  }
   render() {
     return (
       <div className="app">
