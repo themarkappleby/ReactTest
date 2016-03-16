@@ -1,11 +1,7 @@
 import fetch from 'isomorphic-fetch';
+import {createAction} from 'redux-actions';
 
-export const selectMovie = movie => {
-  return {
-    type: 'SELECT_MOVIE',
-    payload: movie.id
-  };
-};
+export const selectMovie = createAction('SELECT_MOVIE', movie => movie.id);
 
 export function fetchMovies() {
   return dispatch => {
@@ -15,9 +11,4 @@ export function fetchMovies() {
   };
 }
 
-export const fetchedMovies = movies => {
-  return {
-    type: 'FETCHED_MOVIES',
-    payload: movies
-  };
-};
+export const fetchedMovies = createAction('FETCHED_MOVIES');
