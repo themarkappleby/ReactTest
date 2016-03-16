@@ -1,6 +1,6 @@
 export default (state = [], action) => {
   switch (action.type) {
-  case 'FETCHED_MOVIES':
+  case 'FETCH_MOVIES':
     return action.payload;
   default:
     return state;

@@ -1,5 +1,5 @@
-import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
+import promiseMiddleware from 'redux-promise';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
 const loggerMiddleware = createLogger();
@@ -11,6 +11,6 @@ import selectedMovieId from './reducers/selectedMovieId';
 const reducers = combineReducers({movies, selectedMovieId});
 
 export default createStore(reducers, applyMiddleware(
-  thunkMiddleware,
+  promiseMiddleware,
   loggerMiddleware
 ));
