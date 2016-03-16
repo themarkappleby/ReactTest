@@ -28,6 +28,7 @@ class App extends Component {
 
           <div className="combo-first">
             <MovieList movies={this.props.movies} />
+            <MovieForm />
           </div>
 
           <div className="combo-last">

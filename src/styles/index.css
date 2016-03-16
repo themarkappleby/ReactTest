@@ -3,6 +3,10 @@ body {
   font-family: sans-serif;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 .app {
   max-width: 1100px;
   margin: 0 auto;

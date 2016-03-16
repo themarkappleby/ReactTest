@@ -5,7 +5,7 @@ import {selectMovie} from '../../redux/actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSelectMovie: (movie) => {
+    onSelectMovie: movie => {
       dispatch(selectMovie(movie));
     }
   };

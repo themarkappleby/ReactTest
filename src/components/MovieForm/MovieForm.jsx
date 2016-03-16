@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import styles from './movieForm.css';
+import {addMovie} from '../../redux/actions';
 
 function defaultState () {
   return {
@@ -11,7 +13,15 @@ function defaultState () {
   };
 }
 
-export default class MovieForm extends Component {
+const mapDispatchToProps = dispatch => {
+  return {
+    addMovie: movie => {
+      dispatch(addMovie(movie));
+    }
+  };
+};
+
+class MovieForm extends Component {
   constructor(props) {
     super(props);
     this.state = defaultState();
@@ -25,35 +35,61 @@ export default class MovieForm extends Component {
 
   submit(e) {
     e.preventDefault();
-    this.props.newMovie(this.state);
+    this.props.addMovie(this.state);
     this.setState(defaultState());
   }
 
   render() {
     return (
-      <form onSubmit={this.submit}>
-        <div className="field">
+      <form className={styles.form} onSubmit={this.submit}>
+        <div className={styles.field}>
           <label htmlFor="title">Title</label>
-          <input id="title" type="text" value={this.state.title} onChange={this.handleInputChange}/>
+          <input
+            id="title"
+            type="text"
+            value={this.state.title}
+            onChange={this.handleInputChange}
+          />
         </div>
 
-        <div className="field">
+        <div className={styles.field}>
           <label htmlFor="rating">Rating</label>
-          <input id="rating" type="text" value={this.state.rating} onChange={this.handleInputChange}/>
+          <input
+            id="rating"
+            type="text"
+            value={this.state.rating}
+            onChange={this.handleInputChange}
+          />
         </div>
 
-        <div className="field">
+        <div className={styles.field}>
           <label htmlFor="runtime">Runtime</label>
-          <input id="runtime" type="text" vaule={this.state.runtime} onChange={this.handleInputChange}/>
+          <input
+            id="runtime"
+            type="text"
+            vaule={this.state.runtime}
+            onChange={this.handleInputChange}
+          />
         </div>
 
-        <div className="field">
+        <div className={styles.field}>
           <label htmlFor="poster">Poster URL</label>
-          <input id="poster" type="url" value={this.state.poster} onChange={this.handleInputChange}/>
+          <input
+            id="poster"
+            type="url"
+            value={this.state.poster}
+            onChange={this.handleInputChange}
+          />
         </div>
 
-        <input type="submit" value="Submit" />
+        <input
+          className={styles.button}
+          type="submit"
+          value="Add Movie"
+        />
       </form>
     );
   }
 }
+
+export default connect(null, mapDispatchToProps)(MovieForm);

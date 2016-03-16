@@ -1,0 +1,39 @@
+.form {
+  border: 1px solid #eee;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.field input {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  font-size: 16px;
+
+}
+
+.button {
+  border: 0;
+  background: #6292F0;
+  padding: 10px 5px;
+  display: block;
+  text-align: center;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background: #0068C2;
+}
