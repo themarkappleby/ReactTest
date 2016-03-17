@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchMovies} from './actions';
-import store from '../../redux/store';
+import store from '../../store';
 
 // components
 import MovieList from '../MovieList/MovieList.jsx';
