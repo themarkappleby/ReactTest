@@ -30,3 +30,16 @@ body {
 .combo-last {
   width: 100%;
 }
+
+.combo--rev > .combo-first {
+  width: 100%;
+}
+
+.combo--rev > .combo-last {
+  width: 0;
+  white-space: nowrap;
+}
+
+.combo--middle > * {
+  vertical-align: middle;
+}

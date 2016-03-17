@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './movieDetails.css';
 
-export default props => {
+const MovieDetails = props => {
   if (!props.movie) return <div className={styles.details}>loading...</div>;
   const {id, title, rating, runtime, poster} = props.movie;
   return (
@@ -23,3 +23,5 @@ export default props => {
     </div>
   );
 };
+
+export default MovieDetails;
