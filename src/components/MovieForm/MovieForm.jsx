@@ -47,6 +47,7 @@ class MovieForm extends Component {
           <input
             id="title"
             type="text"
+            placeholder="ex: Zootopia"
             value={this.state.title}
             onChange={this.handleInputChange}
           />
@@ -57,6 +58,7 @@ class MovieForm extends Component {
           <input
             id="rating"
             type="text"
+            placeholder="ex: 99"
             value={this.state.rating}
             onChange={this.handleInputChange}
           />
@@ -67,6 +69,7 @@ class MovieForm extends Component {
           <input
             id="runtime"
             type="text"
+            placeholder="ex: 128"
             vaule={this.state.runtime}
             onChange={this.handleInputChange}
           />
@@ -77,6 +80,7 @@ class MovieForm extends Component {
           <input
             id="poster"
             type="url"
+            placeholder="ex: http://resizing.flixster.com/K13ByJ8OwsKeKwYudS44gn9tFZs=/180x267/v1.bTsxMTMxODA2ODtwOzE2OTg4OzIwNDg7NDk5Ozc0MQ"
             value={this.state.poster}
             onChange={this.handleInputChange}
           />
