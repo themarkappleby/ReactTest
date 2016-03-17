@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf .build && mkdir .build",
-    "assets": "cp -r ./src/assets ./.build/assets",
     "index": "cp src/index.html .build/index.html",
     "dev": "webpack-dev-server --inline --hot --progress --colors",
-    "prep": "npm run clean && npm run index && npm run assets",
+    "prep": "npm run clean && npm run index",
     "---": "---------------------------------------",
     "start": "npm run prep && npm run dev",
     "build": "npm run prep && webpack"
