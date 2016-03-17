@@ -12,7 +12,7 @@ const Header = props => {
           </div>
           <div className="combo-last">
             <Link
-              to="/movies" className={styles.link} activeClassName={styles.linkActive}>Movies</Link>
+              to="/movies/1" className={styles.link} activeClassName={styles.linkActive}>Movies</Link>
             <Link to="/add-movie" className={styles.link} activeClassName={styles.linkActive}>Add Movie</Link>
           </div>
         </div>
