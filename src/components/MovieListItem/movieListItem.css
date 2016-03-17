@@ -2,6 +2,8 @@
   border-bottom: 1px solid #eee;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
+  display: block;
+  color: black;
 }
 
 .item:hover {

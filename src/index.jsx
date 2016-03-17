@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import '!style!css!./styles/index.css';
 import store from './store';
-import {Router, Route, hashHistory} from 'react-router';
+import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 
 // views
 import App from './views/App/App.jsx';
@@ -16,7 +16,9 @@ render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
+        <IndexRoute component={Movies} />
         <Route path="/movies" component={Movies} />
+        <Route path="/movies/:id" component={Movies} />
         <Route path="/add-movie" component={AddMovie} />
       </Route>
     </Router>

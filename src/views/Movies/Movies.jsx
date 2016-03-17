@@ -6,15 +6,21 @@ import MovieList from '../../components/MovieList/MovieList.jsx';
 import MovieDetails from '../../components/MovieDetails/MovieDetails.jsx';
 
 const mapStateToProps = state => {
-  return {
-    movies: state.movies,
-    selectedMovie: state.movies.find(movie => movie.id === state.selectedMovieId)
-  };
+  return { movies: state.movies };
 };
 
 class Movies extends Component {
   componentDidMount() {
-    store.dispatch(fetchMovies());
+    if (!this.props.movies.length) {
+      store.dispatch(fetchMovies());
+    }
+  }
+  getActiveMovie() {
+    const id = this.props.params.id || this.props.movies[0].id;
+    const activeMovie = this.props.movies.find(movie => {
+      return movie.id == id;
+    });
+    return activeMovie;
   }
   render() {
     return (
@@ -24,7 +30,7 @@ class Movies extends Component {
         </div>
 
         <div className="combo-last">
-          <MovieDetails movie={this.props.selectedMovie} />
+          <MovieDetails movie={this.getActiveMovie()} />
         </div>
       </div>
     );
