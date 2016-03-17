@@ -18,8 +18,10 @@
 }
 
 .poster {
-  max-width: 45px;
+  width: 45px;
+  height: 66.75px;
   margin-right: 10px;
+  background: #B2B7BC;
 }
 
 .title {

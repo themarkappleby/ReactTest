@@ -4,6 +4,7 @@ import {fetchMovies} from './actions';
 import store from '../../store';
 
 // components
+import Header from '../Header/Header.jsx';
 import MovieList from '../MovieList/MovieList.jsx';
 import MovieDetails from '../MovieDetails/MovieDetails.jsx';
 import MovieForm from '../MovieForm/MovieForm.jsx';
@@ -24,15 +25,17 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="combo">
+        <Header />
+        <div className="container">
+          <div className="combo">
+            <div className="combo-first">
+              <MovieList movies={this.props.movies} />
+              <MovieForm />
+            </div>
 
-          <div className="combo-first">
-            <MovieList movies={this.props.movies} />
-            <MovieForm />
-          </div>
-
-          <div className="combo-last">
-            <MovieDetails movie={this.props.selectedMovie} />
+            <div className="combo-last">
+              <MovieDetails movie={this.props.selectedMovie} />
+            </div>
           </div>
         </div>
       </div>
