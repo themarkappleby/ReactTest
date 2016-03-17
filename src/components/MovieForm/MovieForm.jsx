@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import styles from './movieForm.css';
-import {addMovie} from '../../redux/actions';
+import {addMovie} from './actions';
 
 function defaultState () {
   return {

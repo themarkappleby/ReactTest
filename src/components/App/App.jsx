@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {fetchMovies} from '../../redux/actions';
+import {fetchMovies} from './actions';
 import store from '../../redux/store';
 
 // components

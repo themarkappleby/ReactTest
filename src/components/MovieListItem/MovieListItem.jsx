@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import styles from './movieListItem.css';
-import {selectMovie} from '../../redux/actions';
+import {selectMovie} from './actions';
 
 const mapDispatchToProps = dispatch => {
   return {
