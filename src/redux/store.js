@@ -1,16 +1,14 @@
 import createLogger from 'redux-logger';
 import promiseMiddleware from 'redux-promise';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reducers from './reducers/index';
 
 const loggerMiddleware = createLogger();
 
-// reducers
-import movies from './reducers/movies';
-import selectedMovieId from './reducers/selectedMovieId';
-
-const reducers = combineReducers({movies, selectedMovieId});
-
-export default createStore(reducers, applyMiddleware(
-  promiseMiddleware,
-  loggerMiddleware
+export default createStore(reducers, compose(
+  applyMiddleware(
+    promiseMiddleware,
+    loggerMiddleware
+  ),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
