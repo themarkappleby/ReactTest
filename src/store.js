@@ -1,8 +1,8 @@
-import promiseMiddleware from 'redux-promise';
 import { createStore, applyMiddleware, compose } from 'redux';
-import reducers from './reducers/index';
+import rootReducer from './reducers/index';
+import thunkMiddleware from 'redux-thunk';
 
-export default createStore(reducers, compose(
-  applyMiddleware(promiseMiddleware),
+export default createStore(rootReducer, compose(
+  applyMiddleware(thunkMiddleware),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 ));

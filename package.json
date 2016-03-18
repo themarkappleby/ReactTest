@@ -37,6 +37,7 @@
     "redux-actions": "^0.9.1",
     "redux-form": "^4.2.2",
     "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.0.1",
     "rimraf": "^2.5.2",
     "style-loader": "^0.13.0",
     "twg-styleguide": "^1.2.0",

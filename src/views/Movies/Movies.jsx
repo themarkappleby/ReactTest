@@ -16,7 +16,12 @@ class Movies extends Component {
     }
   }
   getActiveMovie() {
-    const id = this.props.params.id || this.props.movies[0].id;
+    let id = 1;
+    if (this.props.params.id) {
+      id = this.props.params.id;
+    } else if (this.props.movies[0]) {
+      id = this.props.movies[0].id;
+    }
     const activeMovie = this.props.movies.find(movie => {
       return movie.id == id;
     });

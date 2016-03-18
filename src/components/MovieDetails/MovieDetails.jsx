@@ -12,10 +12,10 @@ const MovieDetails = props => {
         </div>
         <div className="combo-last">
           <div className={styles.info}>
-            <h2>{title}</h2>
+            <h2>{title || 'NA'}</h2>
             <ul>
-              <li><strong>Rating:</strong> {rating}%</li>
-              <li><strong>Runtime:</strong> {runtime}min</li>
+              <li><strong>Rating:</strong> { rating ? `${rating}%` : 'NA'}</li>
+              <li><strong>Runtime:</strong> {runtime ? `${runtime}min` : 'NA'}</li>
             </ul>
           </div>
         </div>
